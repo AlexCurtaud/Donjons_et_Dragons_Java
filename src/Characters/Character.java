@@ -45,7 +45,7 @@ public class Character {
     // Method
     // Character's move
     public void move(Dice dice) {
-        currentPosition = dice.getScore();
+        currentPosition += dice.getScore();
     }
 
 }
