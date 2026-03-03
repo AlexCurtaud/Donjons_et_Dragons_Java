@@ -16,7 +16,7 @@ public class Game {
         String playerName = menu.retrieveName();
         int playerClass = menu.retrieveCharacterChoice();
         Character character = CharacterFactory.characterCreator(playerName, playerClass);
-        display.statusDisplay(playerClass);
+        System.out.println(character);
         return character;
     }
 

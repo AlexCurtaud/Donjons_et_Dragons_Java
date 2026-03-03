@@ -17,8 +17,4 @@ public class Character {
     public int getCurrentPosition() {
         return currentPosition;
     }
-
-    public int getMagicPower() {
-        return wizard.getMagicPower();
-    }
 }
