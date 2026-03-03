@@ -6,18 +6,21 @@ public class Game {
 
     public Game() {
         this.menu = new Menu();
-        menu.gameStart();
         this.board = new Board(10, 7);
         this.dice = new Dice();
         this.display = new Display();
     }
+    // Method that gather the method that run the game
+    public void gameRunning() {
+        menu.preGameMenu();
 
-    public Character playerCreation() {
-        String playerName = menu.retrieveName();
-        int playerClass = menu.retrieveCharacterChoice();
-        Character character = CharacterFactory.characterCreator(playerName, playerClass);
-        System.out.println(character);
-        return character;
     }
+
+
+
+
+
+
+
 
 }

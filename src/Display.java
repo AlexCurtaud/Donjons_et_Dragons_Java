@@ -1,15 +1,19 @@
 public class Display {
-    // Empty properties, this method is made only to display information
+    private final String ls;
+
+    public Display() {
+        ls = System.lineSeparator();
+    }
+
     // Display Method
     public void messageDisplay(String message) {
         System.out.println(message);
     }
 
-//    public void statusDisplay(int type, Character character) {
-//        if (type == 1) {
-//            System.out.println(character.getHealth());
-//        } else {
-//            System.out.println(character.getHealth());
-//        }
-//    }
+    public void statusDisplay(Character character) {
+        System.out.println(
+                character.getName() + " : " + character.getBreed() + ls +
+                "Health: " + character.getHealthStat() + ls +
+                "Attack: " + character.getAttackStat());
+    }
 }
