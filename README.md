@@ -1,10 +1,19 @@
 # Dungeons and Dragons Java
 
 ## Project Description
-This project is a comprehensive implementation of the classic tabletop role-playing game Dungeons and Dragons using Java. It aims to provide an engaging experience for users looking to play or simulate D&D games through an application that keeps track of players, characters, and game rules.
+The project aim to recreate the well-known game Dungeons & Dragons using Java.
+It's a school project where the goal is to learn the langage.
 
 ## Installation Instructions
-1. **Clone the Repository**:  
+### From an IDE, IntelliJ for example:
+1. Clone the Repo
+2. Go to Project Structure
+3. Select a JDK or download the latest version from the Menu.
+4. Go to src/Main and press CTRL + F5 or Run it from the button at the left bottom of the IDE.
+
+### From the Terminal (Linux/MacOS)
+Be sure to have a JDK or download/install it from : https://www.oracle.com/fr/java/technologies/downloads/
+1. **Clone the Repository**:
    Open your terminal and clone the repository using the following command:  
    ```bash
    git clone https://github.com/AlexCurtaud/DungeonsAndDragons_Java.git
@@ -15,16 +24,25 @@ This project is a comprehensive implementation of the classic tabletop role-play
    cd DungeonsAndDragons_Java
    ```  
 3. **Build the Project**:  
-   Use your preferred IDE or build tool to compile the project. If you're using Maven, run:  
+   Compile the files from .java to .class 
    ```bash
-   mvn clean install
+   javac *.java
    ```
-4. **Run the Application**:  
-   After building, you can run the application via your IDE or by executing the compiled jar file, typically found in the `target` directory.
+   Create the MANIFEST.MF and write Main-class: Main
+   ```bash
+   nano MANIFEST.MF
+   // Write Main:class Main and press Enter
+   // Save and Close
+   ```
+   Create the .jar file
+   ```bash
+   jar -cvmf MANIFEST.MF Prog.jar *.class
+   ```
+4. **Run the Application**:
+   Run the prog.jar file
+   ```bash
+   java -jar prog.jar
+   ```
 
 ## Features
-- **Character Management**: Create, modify, and delete characters.
-- **Dice Rolling Functionality**: Simulate dice rolls according to D&D rules.
-- **Game Sessions Utility**: Organize and manage game sessions.
-- **Custom Ruleset Support**: Easily customize D&D rules to fit your play style.
-- **User-Friendly Interface**: A simple and intuitive interface that enhances gameplay experience.
+[Currently working on it]
