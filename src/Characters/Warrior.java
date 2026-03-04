@@ -3,7 +3,7 @@ package Characters;
 public class Warrior extends Character {
     private final int health = 10;
     private final int physicalAttack = 5;
-    private String breed = "Characters.Warrior";
+    private String playerClass = "Warrior";
 
     // Characters.Warrior is extension of the Characters.Character Class. A Characters.Warrior is a type of Characters.Character.
     public Warrior(String characterName, int type) {
@@ -26,7 +26,13 @@ public class Warrior extends Character {
 
     // Get breed
     @Override
-    public String getBreed() {
-        return breed;
+    public String getPlayerClass() {
+        return playerClass;
+    }
+
+    //toString
+    @Override
+    public String toString() {
+        return "Player : \n" + name + " " + playerClass + "\n" + "Health [" + health + "] + PhysicalAttack [" + physicalAttack + "]";
     }
 }

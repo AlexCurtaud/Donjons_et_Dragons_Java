@@ -3,9 +3,9 @@ package Characters;
 import Gameplay.Dice;
 
 public class Character {
-    private final String name;
+    protected final String name;
     private final int type;
-    private int currentPosition = 1;
+    protected int currentPosition = 1;
 
     public Character(String name, int type) {
         this.name = name;

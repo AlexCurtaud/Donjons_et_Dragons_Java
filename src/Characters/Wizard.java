@@ -3,7 +3,7 @@ package Characters;
 public class Wizard extends Character {
     private final int health = 6;
     private final int magicPower = 8;
-    private String breed = "Characters.Wizard";
+    private String playerClass = "Wizard";
 
     // Characters.Wizard is extension of the Characters.Character Class. A Characters.Wizard is a type of Characters.Character.
     public Wizard(String characterName, int type) {
@@ -26,7 +26,13 @@ public class Wizard extends Character {
 
     // Get breed
     @Override
-    public String getBreed() {
-        return breed;
+    public String getPlayerClass() {
+        return playerClass;
+    }
+
+    //toString
+    @Override
+    public String toString() {
+        return "Player : \n" + name + " " + playerClass + "\n" + "Health [" + health + "] MagicPower [" + magicPower + "]";
     }
 }

@@ -1,10 +1,10 @@
-package Equipment;
+package OffensiveEquipment;
 
-public class Gear {
-    private String name;
-    private String rarity;
+public class OffensiveEquipment {
+    protected String name;
+    protected String rarity;
 
-    public Gear(String name, String rarity) {
+    public OffensiveEquipment(String name, String rarity) {
         this.name = name;
         this.rarity = rarity;
     }

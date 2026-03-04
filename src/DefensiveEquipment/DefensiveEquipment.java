@@ -1,10 +1,10 @@
-package Consumable;
+package DefensiveEquipment;
 
-public class Consumable {
-    private String name;
-    private String rarity;
+public class DefensiveEquipment {
+    protected String name;
+    protected String rarity;
 
-    public Consumable(String name, String rarity) {
+    public DefensiveEquipment(String name, String rarity) {
         this.name = name;
         this.rarity = rarity;
     }
