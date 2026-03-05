@@ -1,13 +1,13 @@
-package Characters;
+package characters;
 
 import Gameplay.Dice;
 
-public class Character {
-    protected final String name;
-    private final int type;
-    protected int currentPosition = 1;
+public abstract class Character {
+    protected String name;
+    protected String type;
+    private int currentPosition = 1;
 
-    public Character(String name, int type) {
+    public Character(String name, String type) {
         this.name = name;
         this.type = type;
     }
@@ -19,31 +19,20 @@ public class Character {
     }
 
     // Get the characters' type
-    public int getType() {
+    public String getType() {
         return type;
     }
 
     // Get the character's position
     public int getCurrentPosition() {
-        if (currentPosition > 47) {
-            currentPosition = 47;
-        }
         return currentPosition;
     }
 
     // Get stats from the character
     // Attack
-    public int getAttackStat() {
-        return 0;
-    }
+    public abstract int getAttackStat();
     // Defense
-    public int getHealthStat() {
-        return 0;
-    }
-    // Breed
-    public String getPlayerClass() {
-        return "";
-    }
+    public abstract int getHealthStat();
 
     // SETTER
     // Set Current Position
@@ -56,5 +45,6 @@ public class Character {
     public void move(Dice dice) {
         currentPosition += dice.getScore();
     }
+
 
 }
