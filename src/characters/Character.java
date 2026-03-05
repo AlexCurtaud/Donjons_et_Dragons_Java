@@ -7,41 +7,70 @@ public abstract class Character {
     protected String type;
     private int currentPosition = 1;
 
+    /**
+     * Character is an abstract Class containing 2 parameters that are passed to its subclasses
+     * Name because any character has a name
+     * Type because any character has a type
+     * @param name
+     * @param type
+     */
     public Character(String name, String type) {
         this.name = name;
         this.type = type;
     }
 
     // GETTER
-    // Get the character's name
+    /**
+     * Get Character's name
+      * @return name
+     */
     public String getName() {
         return name;
     }
 
-    // Get the characters' type
+    /**
+     * Get Character's type
+     * @return type
+     */
     public String getType() {
         return type;
     }
 
-    // Get the character's position
+    /**
+     * Get Character's currentPosition
+     * @return currentPosition
+     */
     public int getCurrentPosition() {
         return currentPosition;
     }
 
     // Get stats from the character
-    // Attack
+    /**
+     * Get Character's Attack statistic
+     * @return AttackStat
+     */
     public abstract int getAttackStat();
-    // Defense
+
+    /**
+     * Get Character's Health statistic
+     * @return HealthStat
+     */
     public abstract int getHealthStat();
 
     // SETTER
-    // Set Current Position
+    /**
+     * Set Character's currentPosition
+     * @return currentPosition
+     */
     public void setCurrentPosition(int i){
         currentPosition = i;
     }
 
     // Method
-    // Character's move
+    /**
+     * Movement method made for the character to move from as many cell as the Dice getScore method
+     * @param dice
+     */
     public void move(Dice dice) {
         currentPosition += dice.getScore();
     }
