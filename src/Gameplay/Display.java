@@ -1,6 +1,6 @@
 package Gameplay;
 
-import Characters.Character;
+import characters.Character;
 
 public class Display {
     private final String ls;
@@ -12,7 +12,7 @@ public class Display {
     //Display Method
     public void statsDisplay(Character player) {
         System.out.println(
-                player.getName() + " : " + player.getPlayerClass() + ls +
+                player.getName() + " : " + player.getType() + ls +
                 "Health: " + player.getHealthStat() + ls +
                 "Attack: " + player.getAttackStat());
     }
