@@ -1,9 +1,10 @@
 package Gameplay;
 
+import java.util.ArrayList;
+
 public class Board {
-    private final int cellNb;
-    //private final int ennemyNb;
-    //private final int mysteryBoxNb;
+    private int cellNb;
+    protected ArrayList<Cell> cells;
 
     /**
      * Board Constructor, for now it is made out of a number of cells
@@ -30,11 +31,8 @@ public class Board {
      * @return board of Cell
      */
     public Cell[] initBoard() {
-        Cell [] board = new Cell[cellNb];
-        for (int i = 1; i <= board.length; i++) {
-            board[i-1] = new Cell(i);
-        }
-        return board;
+        cells[0] = new Cell[cellNb];
+
     }
 
 

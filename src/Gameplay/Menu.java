@@ -31,7 +31,7 @@ public class Menu {
      * - Exit the game
      */
     public void preGameMenu() {
-        System.out.println("||WELCOME TO DUNGEONS AND DRAGONS||" + ls + " ---------- ");
+        System.out.println("--WELCOME TO DUNGEONS AND DRAGONS--" + ls + " ---------- ");
         int userChoice;
         Character player = null;
         boolean end = false;

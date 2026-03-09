@@ -39,10 +39,10 @@ public class Game {
         String playerName = menu.retrieveName();
         String playerClass = menu.retrieveCharacterChoice();
         if(Objects.equals(playerClass, "Wizard")) {
-            player = new Wizard(playerName, playerClass);
+            player = new Wizard(playerName, playerClass, 6);
             System.out.println("Player " + playerName + ", join the wizard guild");
         } else {
-            player = new Warrior(playerName, playerClass);
+            player = new Warrior(playerName, playerClass, 10);
             System.out.println("Player " + playerName + ", join the warrior guild");
         }
         return player;
