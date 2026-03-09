@@ -8,9 +8,10 @@ public class Warrior extends Character {
      * Warrior is extension of the Character Class. A Warrior is a type of Character.
      * @param characterName
      * @param type
+     * @param vitality
      */
-    public Warrior(String characterName, String type) {
-        super(characterName, type);
+    public Warrior(String characterName, String type, int vitality) {
+        super(characterName, type, vitality);
     }
 
     // GETTER

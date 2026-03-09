@@ -1,22 +1,32 @@
 package characters;
 
+import DefensiveEquipment.DefensiveEquipment;
 import Gameplay.Dice;
+import OffensiveEquipment.OffensiveEquipment;
 
 public abstract class Character {
     protected String name;
     protected String type;
     private int currentPosition = 1;
+    private int vitality;
+    private OffensiveEquipment OffEquip = null;
+    private DefensiveEquipment DefEquip = null;
 
     /**
      * Character is an abstract Class containing 2 parameters that are passed to its subclasses
      * Name because any character has a name
      * Type because any character has a type
+     * A PArameter of vitality is present on the character. Vitality is the irremovable stat of life. It cannot move, that is equivalent to the max life point
+     * It has as well a current Position on the board. For now it always start at the first position
+     * A character can be equipped with Offensive and Defensive Equipment that are by default null
      * @param name
      * @param type
+     * @param vitality
      */
-    public Character(String name, String type) {
+    public Character(String name, String type, int vitality) {
         this.name = name;
         this.type = type;
+        this.vitality = vitality;
     }
 
     // GETTER
@@ -34,6 +44,14 @@ public abstract class Character {
      */
     public String getType() {
         return type;
+    }
+
+    /**
+     * Get Character's vitality
+     * @return vitality
+     */
+    public int getVitality() {
+        return vitality;
     }
 
     /**

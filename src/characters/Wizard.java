@@ -8,9 +8,10 @@ public class Wizard extends Character {
      * Wizard is extension of the Character Class. A Wizard is a type of Character.
      * @param characterName
      * @param type
+     * @param vitality
      */
-    public Wizard(String characterName, String type) {
-        super(characterName, type);
+    public Wizard(String characterName, String type, int vitality) {
+        super(characterName, type, vitality);
     }
 
     // GETTER
