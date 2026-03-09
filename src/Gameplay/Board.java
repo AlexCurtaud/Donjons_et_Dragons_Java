@@ -1,5 +1,9 @@
 package Gameplay;
 
+import DefensiveEquipment.Potion;
+import Enemy.Gobelin;
+import OffensiveEquipment.Weapon;
+
 import java.util.ArrayList;
 
 public class Board {
@@ -12,6 +16,7 @@ public class Board {
      */
     public Board(int cellNb) {
         this.cellNb = cellNb;
+        this.cells = new ArrayList<Cell>();
     }
 
     // GETTER
@@ -30,9 +35,12 @@ public class Board {
      * It creates a Cell Object has many times as the cellNb attribute of the board.
      * @return board of Cell
      */
-    public Cell[] initBoard() {
-        cells[0] = new Cell[cellNb];
-
+    public ArrayList<Cell> initBoard() {
+        cells.add(0, new Cell(1, null, null, null));
+        cells.add(1, new Cell(2, new Gobelin("Gobelin", 9, "Gobelin"), null, null));
+        cells.add(2, new Cell(3, null, new Weapon("Basic Sword", "Common", "Weapon", 5, "Sword"), null));
+        cells.add(3, new Cell(4, null, null, new Potion("Standard Potion", "Common", "Health", 2)));
+        return cells;
     }
 
 
