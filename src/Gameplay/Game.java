@@ -1,10 +1,12 @@
 package Gameplay;
 
-import characters.Character;
-import characters.Warrior;
-import characters.Wizard;
+import Characters.Character;
+import Characters.Warrior;
+import Characters.Wizard;
+import Enum.PlayerClass;
+import Exception.PlayerTypeInvalidException;
 
-import java.util.Objects;
+import java.util.ArrayList;
 
 public class Game {
     private Menu menu;
@@ -17,7 +19,7 @@ public class Game {
      * The Constructor make 3 instances out of the Class Board, Dice and Menu. All are part of the Game.
      */
     public Game() {
-        this.board = new Board(47);
+        this.board = new Board(4);
         this.dice = new Dice();
         this.menu = new Menu(this);
     }
@@ -31,23 +33,31 @@ public class Game {
     }
 
     /**
-     * Method that create the player. It retrieves info from the user and use the Wizard or Warrior Constructor to create it.
+     * Method that create the player. It retrieves info from the user and use the Wizard or WARRIOR Constructor to create it.
      * Print a message with the type join.
      * @return player
      */
-    public Character playerCreation() {
+    public Character playerCreation() throws PlayerTypeInvalidException {
         String playerName = menu.retrieveName();
-        String playerClass = menu.retrieveCharacterChoice();
-        if(Objects.equals(playerClass, "Wizard")) {
-            player = new Wizard(playerName, playerClass, 6);
+        String retrieveClass= null;
+        try {
+            retrieveClass = menu.retrieveCharacterChoice();
+        } catch (NumberFormatException e) {
+            throw new PlayerTypeInvalidException();
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new PlayerTypeInvalidException();
+        }
+        if(PlayerClass.WIZARD.getName().equalsIgnoreCase(retrieveClass)) {
+            player = new Wizard(playerName, retrieveClass, 6);
             System.out.println("Player " + playerName + ", join the wizard guild");
-        } else {
-            player = new Warrior(playerName, playerClass, 10);
+        } else if (PlayerClass.WARRIOR.getName().equalsIgnoreCase(retrieveClass)) {
+            player = new Warrior(playerName, retrieveClass, 10);
             System.out.println("Player " + playerName + ", join the warrior guild");
+        } else {
+            throw new PlayerTypeInvalidException();
         }
         return player;
     }
-
     /**
      * The method startGame is a void method that start the gameplay. Runs has long as the player doesn't reach the end of the board.
      * It needs an existing character to run.
@@ -55,7 +65,8 @@ public class Game {
      */
     public void startGame() {
         Boolean exit = false;
-        board.initBoard();
+        ArrayList<Cell> cells = board.initBoard();
+
         while (!exit) {
             if (player == null) {
                 System.out.println("Please create a Player first");
@@ -64,9 +75,11 @@ public class Game {
                 while (player.getCurrentPosition() < board.getCellNb()) {
                     player.move(dice);
                     if (player.getCurrentPosition() >= board.getCellNb()) {
-                        System.out.println(board.getCellNb() + "/" + board.getCellNb() + "\n Well done you've reached the end of the game !");
+//                        System.out.println(board.getCellNb() + "/" + board.getCellNb() + "\n Well done you've reached the end of the game !");
+                        System.out.println(cells.get(player.getCurrentPosition()-1));
                     } else {
-                        System.out.println(player.getCurrentPosition() + "/" + board.getCellNb());
+//                        System.out.println(player.getCurrentPosition() + "/" + board.getCellNb());
+                        System.out.println(cells.get(player.getCurrentPosition()-1));
                     }
                 }
             }

@@ -1,7 +1,9 @@
 package Gameplay;
 
-import characters.Character;
+import Characters.Character;
 import java.util.Scanner;
+import Enum.PlayerClass;
+import Exception.PlayerTypeInvalidException;
 
 public class Menu {
     private final Scanner clavier;
@@ -48,7 +50,11 @@ public class Menu {
                     game.startGame();
                     break;
                 case 2:
-                    player = game.playerCreation();
+                    try {
+                        player = game.playerCreation();
+                    } catch (PlayerTypeInvalidException e) {
+                        System.out.println(e.getMessage());
+                    }
                     break;
                 case 3:
                     if (player != null) {
@@ -91,12 +97,15 @@ public class Menu {
 
     /**
      * Retrieve the character choice out of a user input
+     * Two exceptions are used for this method in order for the player to be valid!
+     *
      * @return type
      */
     // Retrieve the character choice of the user
-    public String retrieveCharacterChoice() {
-        String[] classType = {"Wizard", "Warrior"};
+    public String retrieveCharacterChoice() throws NumberFormatException, ArrayIndexOutOfBoundsException {
+        String[] classType = {PlayerClass.WIZARD.getName(), PlayerClass.WARRIOR.getName()};
         String type;
+        // Hero DAO to display
         System.out.println("Are you a :" + ls + "1. Wizard" + ls + "Stats: Magic Power 8 / Health: 6" + ls + "2. Warrior" + ls + "Stats: Physical Attack 5 / Health 10" + ls + "Type 1 or 2");
         int characterChoice = Integer.parseInt(clavier.nextLine());
         type = classType[characterChoice-1];
