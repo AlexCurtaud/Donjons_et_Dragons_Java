@@ -5,7 +5,7 @@ package Gameplay;
  * Always 6 for now
  */
 public class Dice {
-    private final int faces = 6;
+    private final int faces = 1;
 
     // Method
     /**

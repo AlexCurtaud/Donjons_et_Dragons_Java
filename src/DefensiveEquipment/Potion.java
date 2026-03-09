@@ -35,8 +35,8 @@ public class Potion extends DefensiveEquipment {
      */
     @Override
     public String toString() {
-        String message = "Potion not defined";
-        if(Objects.equals(type, "heath")) {
+        String message = "Potion";
+        if("health".equalsIgnoreCase(type)) {
             message = name + "\n[" + type + " Potion] \n" + "Healing +" + power;
         }
         return message;
