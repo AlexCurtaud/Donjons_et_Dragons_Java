@@ -1,11 +1,11 @@
-package characters;
+package Characters;
 
 public class Warrior extends Character {
     private int health = 10;
     private int physicalAttack = 5;
 
     /**
-     * Warrior is extension of the Character Class. A Warrior is a type of Character.
+     * WARRIOR is extension of the Character Class. A WARRIOR is a type of Character.
      * @param characterName
      * @param type
      * @param vitality
@@ -34,7 +34,7 @@ public class Warrior extends Character {
     }
 
     /**
-     * Gather the Warrior information
+     * Gather the WARRIOR information
      * @return Object
      */
     @Override

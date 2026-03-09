@@ -1,4 +1,4 @@
-package characters;
+package Characters;
 
 public class Wizard extends Character {
     private final int health = 6;
