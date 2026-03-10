@@ -23,6 +23,13 @@ public class Warrior extends Character {
     public int getHealthStat() {
         return health;
     }
+    /**
+     * Set Character's Health
+     */
+    @Override
+    public void setHealthStat(){
+
+    }
 
     /**
      * Get the AttackStat
@@ -31,6 +38,13 @@ public class Warrior extends Character {
     @Override
     public int getAttackStat() {
         return physicalAttack;
+    }
+    /**
+     * Set Character's Attack
+     */
+    @Override
+    public void setAttackStat(){
+
     }
 
     /**

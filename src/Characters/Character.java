@@ -1,5 +1,6 @@
 package Characters;
 
+import DB.DatabaseConnection;
 import DefensiveEquipment.DefensiveEquipment;
 import Gameplay.Dice;
 import OffensiveEquipment.OffensiveEquipment;
@@ -38,12 +39,20 @@ public abstract class Character {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     /**
      * Get Character's type
      * @return type
      */
     public String getType() {
         return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     /**
@@ -54,6 +63,10 @@ public abstract class Character {
         return vitality;
     }
 
+    public void setVitality(int vitality) {
+        this.vitality = vitality;
+    }
+
     /**
      * Get Character's currentPosition
      * @return currentPosition
@@ -62,27 +75,34 @@ public abstract class Character {
         return currentPosition;
     }
 
-    // Get stats from the character
+    /**
+     * Set Character's currentPosition
+     */
+    public void setCurrentPosition(int i){
+        currentPosition = i;
+    }
+
     /**
      * Get Character's Attack statistic
      * @return AttackStat
      */
     public abstract int getAttackStat();
+    /**
+     * Set Character's Attack
+     */
+    public abstract void setAttackStat();
 
     /**
      * Get Character's Health statistic
      * @return HealthStat
      */
     public abstract int getHealthStat();
+    /**
+     * Set Character's Health
+     */
+    public abstract void setHealthStat();
 
     // SETTER
-    /**
-     * Set Character's currentPosition
-     * @return currentPosition
-     */
-    public void setCurrentPosition(int i){
-        currentPosition = i;
-    }
 
     //toString
     /**
@@ -98,6 +118,4 @@ public abstract class Character {
     public void move(Dice dice) {
         currentPosition += dice.getScore();
     }
-
-
 }

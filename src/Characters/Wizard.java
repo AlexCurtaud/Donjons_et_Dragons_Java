@@ -24,6 +24,10 @@ public class Wizard extends Character {
         return health;
     }
 
+    @Override
+    public void setHealthStat(){
+
+    }
     /**
      * Get the AttackStat
      * @return magicPower
@@ -33,6 +37,10 @@ public class Wizard extends Character {
         return magicPower;
     }
 
+    @Override
+    public void setAttackStat() {
+
+    }
     /**
      * Gather the Wizard information
      * @return Object
